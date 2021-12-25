@@ -8,7 +8,7 @@ export class Sprite {
 
   constructor(config: { color?: string, size?: number, gameObject: GameObject }) {
     this.color = config.color ?? "white";
-    this.size = config.size ?? 32;
+    this.size = config.size ?? CONST.TILE_SIZE;
     this.gameObject = config.gameObject;
   }
 

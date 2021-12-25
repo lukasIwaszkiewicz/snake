@@ -5,7 +5,7 @@ import { CONST } from "./const";
 export class Snake extends GameObject {
 
 
-  moveTimer = 100;
+  moveTimer = 20;
   direction: "up" | "right" | "left" | "down" = "up";
   name = "snake";
 
@@ -34,7 +34,7 @@ export class Snake extends GameObject {
 
 
     if (this.moveTimer === 0) {
-      this.moveTimer = 100;
+      this.moveTimer = 20;
       switch (this.direction) {
         case "up":
           this.position.y--;
@@ -44,7 +44,7 @@ export class Snake extends GameObject {
           break;
         case "right":
           this.position.x++;
-          if (this.position.x > CONST.TILES_WIDTH) {
+          if (this.position.x > CONST.TILES_WIDTH - 1) {
             this.position.x = 0;
           }
           break;
@@ -56,7 +56,7 @@ export class Snake extends GameObject {
           break;
         case "down":
           this.position.y++;
-          if (this.position.y > CONST.TILES_HEIGHT) {
+          if (this.position.y > CONST.TILES_HEIGHT -1) {
             this.position.y = 0;
           }
           break;
