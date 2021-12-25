@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #333;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#game-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#game-container canvas {
+    background-color: black;
+    margin-top: 20px;
+    image-rendering: pixelated;
+    border: 1px solid black;
+    width: 640px;
+    height: 640px;
+}
