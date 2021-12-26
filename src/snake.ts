@@ -1,11 +1,12 @@
 import { GameObject } from "./game-object";
 import { Position } from "./position";
 import { CONST } from "./const";
+import { Game } from "./game";
 
 export class Snake extends GameObject {
 
 
-  moveTimer = 20;
+  moveTimer = 1;
   direction: "up" | "right" | "left" | "down" = "up";
   name = "snake";
 
@@ -31,10 +32,8 @@ export class Snake extends GameObject {
   }
 
   update(): void {
-
-
-    if (this.moveTimer === 0) {
-      this.moveTimer = 20;
+    if (this.moveTimer <= 0) {
+      this.moveTimer +=  1;
       switch (this.direction) {
         case "up":
           this.position.y--;
@@ -62,7 +61,7 @@ export class Snake extends GameObject {
           break;
       }
     } else {
-      this.moveTimer--;
+      this.moveTimer -= Game.deltaTime;
     }
   }
 
